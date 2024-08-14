@@ -2,6 +2,10 @@ terraform {
     source = "git::https://github.com/sdara0703/terraform_infra_modules//modules/aws-ec2-asg-module?ref=1.0.0"
 }
 
+include "root" {
+  path = find_in_parent_folders()
+}
+
 inputs = {
   launch_template_name_prefix = "my-app"
   image_id                    = "ami-0c11a84584d4e09dd"
@@ -20,5 +24,4 @@ inputs = {
     Environment = "production"
     Name        = "my-app-instance"
   }
-
 }

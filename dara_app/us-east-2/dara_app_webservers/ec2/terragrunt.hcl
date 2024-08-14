@@ -3,9 +3,9 @@ terraform {
 }
 
 
-# include "root" {
-#   path = find_in_parent_folders()
-# }
+include "root" {
+  path = find_in_parent_folders()
+}
 
 inputs = {
   ami_id         = "ami-0c11a84584d4e09dd" # Replace with your AMI ID
